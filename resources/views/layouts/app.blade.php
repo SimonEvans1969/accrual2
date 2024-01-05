@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>@yield('viewName')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -28,9 +28,21 @@
             @endif
 
             <!-- Page Content -->
-            <main>
-                {{ $slot }}
+            <main class="py-4">
+                @yield('content')
             </main>
         </div>
+        <script type="text/javascript">
+            window.addEventListener('load', function () {
+                $.ajaxSetup({
+                    statusCode: {
+                        419: function(){
+                            location.reload();
+                        }
+                    }
+                });
+            });
+        </script>
+        @yield('script')
     </body>
 </html>
