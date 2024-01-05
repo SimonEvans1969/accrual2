@@ -53,7 +53,7 @@ Route::get('/xero/get', [XeroController::class, 'xero_get'])->name('xero.get');
 Route::get('/xero/getpl', [XeroController::class, 'xero_get_PL'])->name('xero.getpl');
 Route::get('/xero/test', [XeroController::class, 'test')->name('xero.test');
 
-Route::get('projectsprofit', [ProfitabilityController::class, 'show')->name('projectsprofit');
+Route::get('projectsprofit', [ProfitabilityController::class, 'show'])->name('projectsprofit');
 
 //laravel-users
 Route::group(['middleware' => 'auth'], function () {
