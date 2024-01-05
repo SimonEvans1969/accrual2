@@ -66,7 +66,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'fromiatest'
+          app-name: 'accrual2'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_499EDE45A6194F199DA34D4F46EB823F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FDE47F5959224DC0A11F64B8090AC14A }}
           package: .
