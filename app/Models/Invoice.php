@@ -35,8 +35,8 @@ class Invoice extends Authenticatable
      */
     protected $hidden = [];
 
-    protected $dates = [
-		'InvoiceDate'
+    protected $casts = [
+		'InvoiceDate' => 'date',
     ];
 
 	protected $table = 'Invoices';

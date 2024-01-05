@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Model\AspNetUser;
+use App\Models\AspNetUser;
 
 class TimeEntry extends Authenticatable
 {
@@ -31,8 +31,8 @@ class TimeEntry extends Authenticatable
      */
     protected $hidden = [];
 
-    protected $dates = [
-        'TimeDate',
+    protected $casts = [
+        'TimeDate' => 'date',
     ];
 
 	protected $table = 'TimeEntries';

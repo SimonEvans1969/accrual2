@@ -33,7 +33,10 @@ class Deal extends Authenticatable
      */
     protected $hidden = [];
 
-    protected $dates = [ 'CloseDate', 'CreatedDate', 'LastUpdatedDate',
+    protected $casts = [
+        'CloseDate' => 'date',
+        'CreatedDate' => 'date',
+        'LastUpdatedDate' => 'date',
     ];
 
 	protected $table = 'Deals';

@@ -21,7 +21,7 @@ class CostAccrual extends Authenticatable
      */
     protected $hidden = [];
 
-    protected $dates = [
+    protected $casts = [
     ];
 
 	protected $table = 'CostAccruals';

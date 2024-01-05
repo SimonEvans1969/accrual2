@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Model\AspNetUser;
+use App\Models\AspNetUser;
 
 class ProfitAndLoss extends Authenticatable
 {
@@ -27,7 +27,7 @@ class ProfitAndLoss extends Authenticatable
      */
     protected $hidden = [];
 
-    protected $dates = [
+    protected $casts = [
     ];
 
 	protected $table = 'ProfitAndLoss';

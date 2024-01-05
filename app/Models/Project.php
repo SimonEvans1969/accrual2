@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Model\AspNetUser;
+use App\Models\AspNetUser;
 
 class Project extends Authenticatable
 {
@@ -28,8 +28,10 @@ class Project extends Authenticatable
      */
     protected $hidden = [];
 
-    protected $dates = [
-		'StartDate', 'EndDate', 'ClosureDate',
+    protected $casts = [
+		'StartDate' => 'date',
+        'EndDate' => 'date',
+        'ClosureDate' => 'date',
     ];
 
 	protected $table = 'Projects';

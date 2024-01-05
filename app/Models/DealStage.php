@@ -23,7 +23,7 @@ class DealStage extends Authenticatable
 
     protected $hidden = [];
 
-    protected $dates = [
+    protected $casts = [
     ];
 
 	protected $table = 'DealStages';

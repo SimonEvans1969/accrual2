@@ -26,7 +26,7 @@ class ProjectType extends Authenticatable
      */
     protected $hidden = [ 'ID' ];
 
-    protected $dates = [
+    protected $casts = [
     ];
 
 	protected $table = 'ProjectTypes';

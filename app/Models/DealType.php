@@ -23,7 +23,7 @@ class DealType extends Authenticatable
 
     protected $hidden = [];
 
-    protected $dates = [
+    protected $casts = [
     ];
 
 	protected $table = 'DealTypes';

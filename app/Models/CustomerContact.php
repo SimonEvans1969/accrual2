@@ -27,7 +27,7 @@ class CustomerContact extends Authenticatable
      */
     protected $hidden = [];
 
-    protected $dates = [
+    protected $casts = [
     ];
 
 	protected $table = 'CustomerContacts';
