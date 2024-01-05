@@ -51,7 +51,7 @@ Route::get('/xero/authorize', [XeroController::class, 'xero_auth'])->name('xero.
 Route::get('/xero/callback', [XeroController::class, 'xero_callback'])->name('xero.callback');
 Route::get('/xero/get', [XeroController::class, 'xero_get'])->name('xero.get');
 Route::get('/xero/getpl', [XeroController::class, 'xero_get_PL'])->name('xero.getpl');
-Route::get('/xero/test', [XeroController::class, 'test')->name('xero.test');
+Route::get('/xero/test', [XeroController::class, 'test'])->name('xero.test');
 
 Route::get('projectsprofit', [ProfitabilityController::class, 'show'])->name('projectsprofit');
 
@@ -74,9 +74,9 @@ Route::get('routes', function() {
 
     echo "<table style='width:100%'>";
     echo "<tr>";
-    echo "<td width='10%'><h4>HTTP Method</h4></td>";
-    echo "<td width='10%'><h4>Route</h4></td>";
-    echo "<td width='80%'><h4>Corresponding Action</h4></td>";
+    echo "<td'><h4>HTTP Method</h4></td>";
+    echo "<td><h4>Route</h4></td>";
+    echo "<td><h4>Corresponding Action</h4></td>";
     echo "</tr>";
     foreach ($routeCollection as $value) {
         echo "<tr>";
