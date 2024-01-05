@@ -1,6 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectsController;
+use App\Http\Controllers\DealsController;
+use App\Http\Controllers\CostAccrualsController;
+use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\XeroController;
+use App\Http\Controllers\ProfitabilityController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,23 +38,22 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('projects','ProjectsController');
-Route::get('accrual/{id}','ProjectsController@accrual')->name('accrual');;
-Route::resource('costaccruals','CostAccrualsController');
-Route::resource('deals','DealsController');
-Route::resource('contacts','ContactsController');
-Route::resource('customers','CustomersController');
-Route::get('/dealschart', 'DealsController@chart')->name('chart');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::resource('projects',ProjectsController::class);
+Route::get('accrual/{id}',[ProjectsController::class, 'accrual'])->name('accrual');;
+Route::resource('costaccruals',CostAccrualsController::class);
+Route::resource('deals',DealsController::class);
+Route::resource('contacts',ContactsController::class);
+Route::resource('customers',CustomersController::class);
+Route::get('/dealschart', [DealsController::class, 'chart'])->name('chart');
 
-Route::get('/xero/authorize', 'XeroController@xero_auth')->name('xero.auth');
-Route::get('/xero/callback', 'XeroController@xero_callback')->name('xero.callback');
-Route::get('/xero/get', 'XeroController@xero_get')->name('xero.get');
-Route::get('/xero/getpl', 'XeroController@xero_get_PL')->name('xero.getpl');
-Route::get('/xero/test', 'XeroController@test')->name('xero.test');
+Route::get('/xero/authorize', [XeroController::class, 'xero_auth'])->name('xero.auth');
+Route::get('/xero/callback', [XeroController::class, 'xero_callback'])->name('xero.callback');
+Route::get('/xero/get', [XeroController::class, 'xero_get'])->name('xero.get');
+Route::get('/xero/getpl', [XeroController::class, 'xero_get_PL'])->name('xero.getpl');
+Route::get('/xero/test', [XeroController::class, 'test')->name('xero.test');
 
-Route::get('projectsprofit', 'ProfitabilityController@show')->name('projectsprofit');
+Route::get('projectsprofit', [ProfitabilityController::class, 'show')->name('projectsprofit');
 
 //laravel-users
 Route::group(['middleware' => 'auth'], function () {
