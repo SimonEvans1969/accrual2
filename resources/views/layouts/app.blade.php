@@ -10,7 +10,7 @@
     <title>@yield('viewName')</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    @vite(['resources/js/app.js'])
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
 	<script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js" defer></script>
 	<script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js" defer></script>
@@ -34,7 +34,7 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" rel="stylesheet">
-	<link href="{{ asset('css/app.css') }}?rnd=001" rel="stylesheet">
+    @vite(['resources/css/app.css'])
 	@yield('style')
 </head>
 <body>
