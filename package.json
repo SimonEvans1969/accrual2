@@ -19,7 +19,6 @@
         "chart.js": "^4.4.1",
         "datatables.net-buttons-dt": "^2.4.2",
         "datatables.net-dt": "^1.13.8",
-        "datatables.net-fixedcolumns-dt": "^4.3.0",
-        "jquery": "^3.7.1"
+        "datatables.net-fixedcolumns-dt": "^4.3.0"
     }
 }
