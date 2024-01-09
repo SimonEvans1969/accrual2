@@ -30,30 +30,30 @@ Deals
                             <?php $sumTotal = 0; $sumPipeline = 0; ?>
                             @foreach($deals as $deal)
                                 <tr deal="{{$deal->Id}}">
-                                    <td> 
+                                    <td>
                                         {{ $deal->Customer }}
                                     </td>
-									<td> 
+									<td>
                                         {{ $deal->Name }}
                                     </td>
-									<td> 
+									<td>
                                         {{ $deal->Description }}
                                     </td>
-                                    <td> 
+                                    <td>
                                         {{ $deal->DealStage }}
                                     </td>
-									<td> 
+									<td>
                                         {{ $deal->DealType }}
                                     </td>
-									<td class="text-right"> 
+									<td class="text-right">
                                         £{{ number_format($deal->Amount) }}
-                                        <?php $sumTotal += $deal->Amount; 
+                                        <?php $sumTotal += $deal->Amount;
 											  $sumPipeline += ($deal->Amount * $deal->Percentage); ?>
                                     </td>
-                                    <td data-order="{{ $deal->CloseDate ? $deal->CloseDate->format('Y-m-d') : '-' }}"> 
+                                    <td data-order="{{ $deal->CloseDate ? $deal->CloseDate->format('Y-m-d') : '-' }}">
                                         {{ $deal->CloseDate ? $deal->CloseDate->format('d/m/Y') : '-' }}
                                     </td>
-									<td> 
+									<td>
                                         {{ $deal->DealOwner }}
                                     </td>
                                 </tr>
@@ -68,7 +68,7 @@ Deals
 							<td class="text-right">£{{ number_format($sumPipeline) }}</td>
 							<td></td>
 							<td></td>
-						</tfoot>	    		
+						</tfoot>
                     </table>
                 </div>
             </div>
@@ -90,7 +90,7 @@ Deals
 			<button type="submit" name="filter" class="btn btn-secondary {{ $filter == 'LostYr' ? 'active' : '' }}" value="LostYr">Lost this Year</button>
         </div>
     </div>
-    <a href="/deals/create" class="btn btn-primary active pull-right" role="button" aria-pressed="true">New deal</a>
+    <a href="/deals/create" class="btn btn-primary active pull-right col-md-1" role="button" aria-pressed="true">New deal</a>
     </div>
 </form>
 @endsection
@@ -104,19 +104,19 @@ window.addEventListener('load', function () {
         scrollCollapse: true,
         paging:         false,
 	});
-	
+
     $('#filters').prependTo($('#deals_wrapper'));
-    
+
 	setTableHeight();
 	$(window).resize(function(){
 		setTableHeight();
 	});
-    
+
     $('#deals tbody').on('click', 'tr', function () {
         var deal_id = $(this).attr('deal');
 		window.location.href = "{{url('deals')}}/" + deal_id + "/edit";
     } );
-	
+
 });
 
 function setTableHeight() {
@@ -125,6 +125,6 @@ function setTableHeight() {
 	tableHeight = Math.max(200, tableHeight);
 	$('.dataTables_scrollBody').css('height', tableHeight + 'px');
 }
-	
+
 </script>
 @endsection
